@@ -53,7 +53,6 @@
         height: 100%
     .pagination
       position: absolute
-      z-index: 20
       bottom: 20px
       width: 100%
       height: 20px
