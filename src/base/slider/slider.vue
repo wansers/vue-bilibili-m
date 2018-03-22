@@ -3,7 +3,7 @@
     <div class="swiper-wrapper">
       <slot></slot>
     </div>
-    <div class="swiper-pagination"></div>
+    <div class="pagination"></div>
   </div>
 </template>
 
@@ -33,6 +33,7 @@
     methods: {
       _initSlider() {
         this.swiper = new Swiper('.swiper-container', {
+          pagination : '.pagination',
           loop: this.loop,
           autoplay: 2000,
           speed: 1000,
@@ -43,16 +44,29 @@
   }
 </script>
 
-<style scoped lang="stylus" ref="stylesheet/stylus">
+<style  lang="stylus" ref="stylesheet/stylus">
   .swiper-container
     height: 235px
     .swiper-wrapper
       img
         width: 100%
         height: 100%
-    .swiper-pagination-bullet
-      width: 10px
-      height: 10px
-    .swiper-pagination-bullet-active
-      background-color: #fb7299
+    .pagination
+      position: absolute
+      z-index: 20
+      bottom: 20px
+      width: 100%
+      height: 20px
+      text-align: center
+      .swiper-pagination-switch
+        display: inline-block
+        width: 10px
+        height: 10px
+        border-radius: 50%
+        background: #555
+        margin: 0 5px
+        opacity: 0.8
+        cursor: pointer
+      .swiper-active-switch
+        background: #fff
 </style>

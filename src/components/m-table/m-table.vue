@@ -128,6 +128,9 @@
         this.swiper = new Swiper('.nav', {
           loop: false,
           speed: 1000,
+          freeMode : true,
+          slidesPerView : 6,
+
         })
       },
       navClickFun() {
